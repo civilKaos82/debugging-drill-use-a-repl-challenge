@@ -19,20 +19,20 @@ Think of IRB as a sandbox where we can experiment and play with Ruby.  As we're 
 ### Pre-release:  Start the IRB Session
 ```bash
 $ irb
-2.0.0-p598 :001 >
+2.2.1 :001 >
 ```
 *Figure 1*.  Opening IRB.
 
 After cloning this repository, open Terminal and navigate to the challenge directory.  From there we'll start an IRB session (see Figure 1).
 
-When IRB opens, we should see the command prompt change to display the version of Ruby we're using.  In Figure 1, we can see that the Ruby version used in the example is version `2.0.0-p598`  And, with our IRB session started, we can now write Ruby code that will execute immediately.
+When IRB opens, we should see the command prompt change to display the version of Ruby we're using.  In Figure 1, we can see that the Ruby version used in the example is version `2.2.1`  And, with our IRB session started, we can now write Ruby code that will execute immediately.
 
 *Note:* The prompt identifies the Ruby version used, so it might be different on different machines.
 
 
 ### Release 0: Read, Evaluate, Print, Loop ...
 ```
-2.0.0-p598 :001 > 1 + 1
+2.2.1 :001 > 1 + 1
  => 2
 ```
 *Figure 2.*  Evaluating the expression `1 + 1`.
@@ -46,9 +46,9 @@ Run the code in Figure 2 in our open IRB session.  As we work through later rele
 
 ### Release 1: Variables and Methods
 ```
-2.0.0-p598 :002 > sum = 1 + 1
+2.2.1 :002 > sum = 1 + 1
  => 2
-2.0.0-p598 :003 > sum
+2.2.1 :003 > sum
  => 2
 ```
 *Figure 3*. Declaring, assigning, and accessing a variable in IRB.
@@ -58,11 +58,11 @@ We can declare variables and define methods in IRB.  These variables and methods
 In Figure 3, we declare and assign a variable `sum` and then access its value.
 
 ```
-2.0.0-p598 :004 > def greeting
-2.0.0-p598 :005?>   return "Hello."
-2.0.0-p598 :006?>   end
+2.2.1 :004 > def greeting
+2.2.1 :005?>   return "Hello."
+2.2.1 :006?>   end
  => nil 
-2.0.0-p598 :007 > greeting
+2.2.1 :007 > greeting
  => "Hello." 
 ```
 *Figure 4*.  Defining and calling a method in IRB.
@@ -80,9 +80,9 @@ There are other Ruby libraries than those which are part of the Ruby Core.  Some
 The same is true for installed Ruby gems.  Once they've been installed, we can require them in our programs.
 
 ```
-2.0.0-p598 :008 > require 'date'
+2.2.1 :008 > require 'date'
  => true
-2.0.0-p598 :009 > my_birthday = Date.new(1980,4,15)
+2.2.1 :009 > my_birthday = Date.new(1980,4,15)
   => #<Date: 1980-04-15 ((2444345j,0s,0n),+0s,2299161j)>
 ```
 *Figure 5*. Requiring a library in IRB.
@@ -93,13 +93,13 @@ In Figure 5, we require the date library, which is part of the Ruby Standard Lib
 
 ### Release 3: Loading a File
 ```
-2.0.0-p598 :010 > load "dog.rb"
+2.2.1 :010 > load "dog.rb"
  => true
-2.0.0-p598 :011 > jayda = Dog.new("Jayda", "OH-123456")
+2.2.1 :011 > jayda = Dog.new("Jayda", "OH-123456")
  => #<Dog:0x007fd9aa3605e8 @name="Jayda", @license="OH-123456"> 
-2.0.0-p598 :012 > jayda.name
+2.2.1 :012 > jayda.name
  => "Jayda" 
-2.0.0-p598 :013 > jayda.license
+2.2.1 :013 > jayda.license
  => "OH-123456" 
 ```
 *Figure 6*.  Loading code in a file in IRB.
@@ -109,7 +109,7 @@ We can also load files that we've written.  An example file has been provided:  
 
 ### Release 4: End the IRB Session 
 ```
-2.0.0-p598 :014 > exit
+2.2.1 :014 > exit
 ```
 *Figure 7*.  Exiting IRB.
 
