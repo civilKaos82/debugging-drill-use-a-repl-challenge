@@ -13,24 +13,17 @@ IRB is Ruby's [read-eval-print-loop](http://en.wikipedia.org/wiki/Read%E2%80%93e
 
 Think of IRB as a sandbox where we can experiment and play with Ruby.  As we're introduced to new Ruby [libraries](https://www.ruby-lang.org/en/libraries/), IRB is a great place to explore the capabilities of the library.  We can also load and use code that we ourselves write.
 
-### Recording the IRB Session
-Normally when using IRB we explore a bit, and when we're done, we aren't worried about saving a record or what happened in the session.  This challenge will be an exception.
-
-To start an IRB session, we would normally simply run `irb`.  For this challenge, we're going to [pipe](http://en.wikipedia.org/wiki/Pipeline_%28Unix%29) (`|`) the output of running the `irb` command to another command.  Specifically, the [`tee`](http://en.wikipedia.org/wiki/Tee_%28command%29#Unix-like) command, which will allow us to write the output of the `irb` command to a file.
-
-Mastering the use of pipes and `tee` is not the purpose of this challenge.  It's okay if we're unfamiliar with them.
-
 
 ## Releases
 
 ### Pre-release:  Start the IRB Session
 ```bash
-$ irb | tee irb.log
+$ irb
 2.0.0-p598 :001 >
 ```
-*Figure 1*.  Opening IRB and recording the session to a file.
+*Figure 1*.  Opening IRB.
 
-After cloning this repository, open Terminal and navigate to the challenge directory.  From there we'll start an IRB session and set it up so that when we exit IRB, our session is logged to the file `irb.log` (see Figure 1).
+After cloning this repository, open Terminal and navigate to the challenge directory.  From there we'll start an IRB session (see Figure 1).
 
 When IRB opens, we should see the command prompt change to display the version of Ruby we're using.  In Figure 1, we can see that the Ruby version used in the example is version `2.0.0-p598`  And, with our IRB session started, we can now write Ruby code that will execute immediately.
 
@@ -122,7 +115,8 @@ We can also load files that we've written.  An example file has been provided:  
 
 When we're done exploring, we can exit the IRB session (see Figure 7). When we exit IRB, our command line prompt returns to normal.
 
-When IRB exits, its output will be written to `irb.log`.  To submit this challenge, commit the changes made to that file, push a branch, and submit a pull request.
+*Note:* There is no code to submit for this challenge.
+
 
 ## Conclusion
 Being able to explore Ruby is a critical skill—whether the Ruby Core, the Standard Library, a gem, or our own code.  Working in a REPL like IRB is useful for both learning how to use an unfamiliar library and also working with code we're writing.
