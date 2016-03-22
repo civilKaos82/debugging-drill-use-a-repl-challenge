@@ -13,33 +13,26 @@ IRB is Ruby's [read-eval-print-loop](http://en.wikipedia.org/wiki/Read%E2%80%93e
 
 Think of IRB as a sandbox where we can experiment and play with Ruby.  As we're introduced to new Ruby [libraries](https://www.ruby-lang.org/en/libraries/), IRB is a great place to explore the capabilities of the library.  We can also load and use code that we ourselves write.
 
-### Recording the IRB Session
-Normally when using IRB we explore a bit, and when we're done, we aren't worried about saving a record or what happened in the session.  This challenge will be an exception.
-
-To start an IRB session, we would normally simply run `irb`.  For this challenge, we're going to [pipe](http://en.wikipedia.org/wiki/Pipeline_%28Unix%29) (`|`) the output of running the `irb` command to another command.  Specifically, the [`tee`](http://en.wikipedia.org/wiki/Tee_%28command%29#Unix-like) command, which will allow us to write the output of the `irb` command to a file.
-
-Mastering the use of pipes and `tee` is not the purpose of this challenge.  It's okay if we're unfamiliar with them.
-
 
 ## Releases
 
 ### Pre-release:  Start the IRB Session
 ```bash
-$ irb | tee irb.log
-2.0.0-p598 :001 >
+$ irb
+2.2.1 :001 >
 ```
-*Figure 1*.  Opening IRB and recording the session to a file.
+*Figure 1*.  Opening IRB.
 
-After cloning this repository, open Terminal and navigate to the challenge directory.  From there we'll start an IRB session and set it up so that when we exit IRB, our session is logged to the file `irb.log` (see Figure 1).
+After cloning this repository, open Terminal and navigate to the challenge directory.  From there we'll start an IRB session (see Figure 1).
 
-When IRB opens, we should see the command prompt change to display the version of Ruby we're using.  In Figure 1, we can see that the Ruby version used in the example is version `2.0.0-p598`  And, with our IRB session started, we can now write Ruby code that will execute immediately.
+When IRB opens, we should see the command prompt change to display the version of Ruby we're using.  In Figure 1, we can see that the Ruby version used in the example is version `2.2.1`  And, with our IRB session started, we can now write Ruby code that will execute immediately.
 
 *Note:* The prompt identifies the Ruby version used, so it might be different on different machines.
 
 
 ### Release 0: Read, Evaluate, Print, Loop ...
 ```
-2.0.0-p598 :001 > 1 + 1
+2.2.1 :001 > 1 + 1
  => 2
 ```
 *Figure 2.*  Evaluating the expression `1 + 1`.
@@ -53,9 +46,9 @@ Run the code in Figure 2 in our open IRB session.  As we work through later rele
 
 ### Release 1: Variables and Methods
 ```
-2.0.0-p598 :002 > sum = 1 + 1
+2.2.1 :002 > sum = 1 + 1
  => 2
-2.0.0-p598 :003 > sum
+2.2.1 :003 > sum
  => 2
 ```
 *Figure 3*. Declaring, assigning, and accessing a variable in IRB.
@@ -65,11 +58,11 @@ We can declare variables and define methods in IRB.  These variables and methods
 In Figure 3, we declare and assign a variable `sum` and then access its value.
 
 ```
-2.0.0-p598 :004 > def greeting
-2.0.0-p598 :005?>   return "Hello."
-2.0.0-p598 :006?>   end
+2.2.1 :004 > def greeting
+2.2.1 :005?>   return "Hello."
+2.2.1 :006?>   end
  => nil 
-2.0.0-p598 :007 > greeting
+2.2.1 :007 > greeting
  => "Hello." 
 ```
 *Figure 4*.  Defining and calling a method in IRB.
@@ -87,9 +80,9 @@ There are other Ruby libraries than those which are part of the Ruby Core.  Some
 The same is true for installed Ruby gems.  Once they've been installed, we can require them in our programs.
 
 ```
-2.0.0-p598 :008 > require 'date'
+2.2.1 :008 > require 'date'
  => true
-2.0.0-p598 :009 > my_birthday = Date.new(1980,4,15)
+2.2.1 :009 > my_birthday = Date.new(1980,4,15)
   => #<Date: 1980-04-15 ((2444345j,0s,0n),+0s,2299161j)>
 ```
 *Figure 5*. Requiring a library in IRB.
@@ -100,13 +93,13 @@ In Figure 5, we require the date library, which is part of the Ruby Standard Lib
 
 ### Release 3: Loading a File
 ```
-2.0.0-p598 :010 > load "dog.rb"
+2.2.1 :010 > load "dog.rb"
  => true
-2.0.0-p598 :011 > jayda = Dog.new("Jayda", "OH-123456")
+2.2.1 :011 > jayda = Dog.new("Jayda", "OH-123456")
  => #<Dog:0x007fd9aa3605e8 @name="Jayda", @license="OH-123456"> 
-2.0.0-p598 :012 > jayda.name
+2.2.1 :012 > jayda.name
  => "Jayda" 
-2.0.0-p598 :013 > jayda.license
+2.2.1 :013 > jayda.license
  => "OH-123456" 
 ```
 *Figure 6*.  Loading code in a file in IRB.
@@ -116,13 +109,14 @@ We can also load files that we've written.  An example file has been provided:  
 
 ### Release 4: End the IRB Session 
 ```
-2.0.0-p598 :014 > exit
+2.2.1 :014 > exit
 ```
 *Figure 7*.  Exiting IRB.
 
 When we're done exploring, we can exit the IRB session (see Figure 7). When we exit IRB, our command line prompt returns to normal.
 
-When IRB exits, its output will be written to `irb.log`.  To submit this challenge, commit the changes made to that file, push a branch, and submit a pull request.
+*Note:* There is no code to submit for this challenge.
+
 
 ## Conclusion
 Being able to explore Ruby is a critical skill—whether the Ruby Core, the Standard Library, a gem, or our own code.  Working in a REPL like IRB is useful for both learning how to use an unfamiliar library and also working with code we're writing.
